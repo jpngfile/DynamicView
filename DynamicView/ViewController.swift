@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
 
-        class blueViewController : UIViewController {
+        /*class blueViewController : UIViewController {
             var windowBounds : CGRect = CGRect()
             
             convenience init (bounds : CGRect){
@@ -40,7 +40,12 @@ class ViewController: UIViewController {
         
         let blueController = blueViewController(bounds : view.bounds)
         addChildViewController(blueController)
-        view.addSubview(blueController.view)
+        view.addSubview(blueController.view)*/
+        
+        let menuVC = MenuVC (bounds : view.bounds)
+        addChildViewController(menuVC)
+        view.addSubview(menuVC.tableView)
+        
         
         class blackViewController : UIViewController {
             var windowBounds : CGRect = CGRect()
