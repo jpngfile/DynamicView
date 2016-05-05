@@ -25,7 +25,6 @@ class MenuVC : UITableViewController {
     override func tableView (tableView : UITableView, cellForRowAtIndexPath indexPath : NSIndexPath) -> UITableViewCell{
         if let cell = self.tableView.dequeueReusableCellWithIdentifier ("cell"){
             cell.textLabel?.text = colourWords [indexPath.row]
-            print ("retuned")
             return cell
         }
         let newCell = UITableViewCell (style: .Default, reuseIdentifier: "cell")
