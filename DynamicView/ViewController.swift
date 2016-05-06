@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+protocol ChangeColourDelegate {
+    func ChangeColour (colour : UIColor)
+}
+
 class ViewController: UIViewController, ChangeColourDelegate {
 
     
@@ -42,9 +47,9 @@ class ViewController: UIViewController, ChangeColourDelegate {
         cyanController.view.autoresizingMask = [.FlexibleHeight,.FlexibleWidth,.FlexibleTopMargin,.FlexibleLeftMargin]
         cyanController.view.frame = CGRect (x : (view.bounds.width/2), y : (view.bounds.height/2), width: (view.bounds.width/2), height: (view.bounds.height/2))
         
-        addChildViewController(cyanController)
-        view.addSubview(cyanController.view)
+        addChildViewController(cyanController)        
         cyanController.didMoveToParentViewController(self)
+        view.addSubview(cyanController.view)
         
     }
     

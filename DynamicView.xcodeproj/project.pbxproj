@@ -10,7 +10,6 @@
 		FB4974171CDA71AB00B28842 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4974161CDA71AB00B28842 /* AppDelegate.swift */; };
 		FB4974191CDA71AB00B28842 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4974181CDA71AB00B28842 /* ViewController.swift */; };
 		FB49741E1CDA71AB00B28842 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB49741D1CDA71AB00B28842 /* Assets.xcassets */; };
-		FB70CFD81CDBE3EA006F26F4 /* ChangeColourDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70CFD71CDBE3EA006F26F4 /* ChangeColourDelegate.swift */; };
 		FB70CFDA1CDBF077006F26F4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70CFD91CDBF077006F26F4 /* MenuVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,7 +19,6 @@
 		FB4974181CDA71AB00B28842 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FB49741D1CDA71AB00B28842 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB4974221CDA71AB00B28842 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB70CFD71CDBE3EA006F26F4 /* ChangeColourDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeColourDelegate.swift; sourceTree = "<group>"; };
 		FB70CFD91CDBF077006F26F4 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				FB4974161CDA71AB00B28842 /* AppDelegate.swift */,
-				FB70CFD71CDBE3EA006F26F4 /* ChangeColourDelegate.swift */,
 				FB4974181CDA71AB00B28842 /* ViewController.swift */,
 				FB70CFD91CDBF077006F26F4 /* MenuVC.swift */,
 				FB49741D1CDA71AB00B28842 /* Assets.xcassets */,
@@ -134,7 +131,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB4974191CDA71AB00B28842 /* ViewController.swift in Sources */,
-				FB70CFD81CDBE3EA006F26F4 /* ChangeColourDelegate.swift in Sources */,
 				FB4974171CDA71AB00B28842 /* AppDelegate.swift in Sources */,
 				FB70CFDA1CDBF077006F26F4 /* MenuVC.swift in Sources */,
 			);
