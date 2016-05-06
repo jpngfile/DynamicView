@@ -12,51 +12,31 @@ import UIKit
 
 class MenuVC : UITableViewController {
     
-    let colours : [[String : AnyObject]] = [
-        ["title" : "Red" , "color" :  UIColor.redColor()],
-        ["title" : "Blue" , "color" :  UIColor.blueColor()],
-        ["title" : "Lime",  "color" : UIColor.greenColor()],
-        ["title" : "Maroon", "color" : UIColor (red: 128, green : 0, blue : 0, alpha: 0.5)],
-        ["title" : "Olive", "color" : UIColor (red: 128, green : 128, blue : 0, alpha: 0.5)],
-        ["title" : "Green", "color" : UIColor (red: 0, green : 128, blue : 0, alpha: 0.5)],
-        ["title" : "Purple", "color" : UIColor (red: 128, green : 0, blue : 128, alpha: 0.5)],
-        ["title" :"Teal", "color" : UIColor (red: 0, green : 128, blue : 128, alpha: 0.5)],
-        ["title" : "Navy", "color" : UIColor (red: 0, green : 0, blue : 128, alpha: 0.5)]
-        ]
-    
-    
-    
-    
-//    var colourWords : [String] = ["Red", "Blue", "Lime", "Maroon", "Olive","Green","Purple", "Teal", "Navy"]
+    let colours : [String : UIColor] = ["Red" : UIColor.redColor(), "Blue" : UIColor.blueColor(), "Lime" : UIColor.greenColor(),
+                                        "Maroon" : UIColor (red: 128, green : 0, blue : 0, alpha: 0.5),
+                                        "Olive" : UIColor (red: 128, green : 128, blue : 0, alpha: 0.5),
+                                        "Green" : UIColor (red: 0, green : 128, blue : 0, alpha: 0.5),
+                                        "Purple" : UIColor (red: 128, green : 0, blue : 128, alpha: 0.5),
+                                        "Teal" : UIColor (red: 0, green : 128, blue : 128, alpha: 0.5),
+                                        "Navy" : UIColor (red: 0, green : 0, blue : 128, alpha: 0.5)]
+    var colourWords : [String] = ["Red", "Blue", "Lime", "Maroon", "Olive","Green","Purple", "Teal", "Navy"]
     var colourDelegate : ChangeColourDelegate?
     
     override func tableView (tableView : UITableView, cellForRowAtIndexPath indexPath : NSIndexPath) -> UITableViewCell{
         let cell = self.tableView.dequeueReusableCellWithIdentifier ("cell")! as UITableViewCell
-        
-        let item = colours[indexPath.row]
-        if let title = item["title"] as? String , color = item["color"] as? UIColor {
-            
-            cell.textLabel?.text = title
-            cell.backgroundColor = color
-        }
-        
+        cell.textLabel?.text = colourWords [indexPath.row]
+        cell.backgroundColor = colours [colourWords [indexPath.row]]
         return cell
     }
     
     
     override func tableView (tablewView : UITableView, numberOfRowsInSection section : Int) -> Int {
-        return colours.count
+        return colourWords.count
         
     }
     
     override func tableView (tableView : UITableView, didSelectRowAtIndexPath indexPath : NSIndexPath){
-        
-        let item = colours[indexPath.row]
-        if let color = item["color"] as? UIColor {
-            
-            colourDelegate?.ChangeColour(color)
-        }
-        
+        colourDelegate?.ChangeColour(colours[colourWords [indexPath.row]]!)
     }
     
     override func tableView (tableView : UITableView, heightForRowAtIndexPath indexPath : NSIndexPath) -> CGFloat {
@@ -76,7 +56,6 @@ class MenuVC : UITableViewController {
     }
 }
 
-//This custom cell replaces the default selected style by only highlighting the text rather than the whole cell
 class CustomCell : UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {

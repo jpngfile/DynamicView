@@ -10,10 +10,10 @@ import UIKit
 
 
 protocol ChangeColourDelegate {
-    func ChangeColour ( colour : UIColor)
+    func ChangeColour (colour : UIColor)
 }
 
-class ViewController: UIViewController{
+class ViewController: UIViewController, ChangeColourDelegate {
 
     
     let canvasController = UIViewController()
@@ -51,12 +51,11 @@ class ViewController: UIViewController{
         cyanController.didMoveToParentViewController(self)
         view.addSubview(cyanController.view)
         
-        let date = NSDate()
-        let s = date.toPaymanStr()
-        print (s)
     }
     
-    
+    func ChangeColour(colour: UIColor) {
+        canvasController.view.backgroundColor = colour
+    }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .All
@@ -68,25 +67,5 @@ class ViewController: UIViewController{
     }
 
 
-}
-
-extension ViewController : ChangeColourDelegate {
-    
-    func ChangeColour(colour: UIColor) {
-        canvasController.view.backgroundColor = colour
-    }
-    
-}
-
-extension NSDate {
-    
-    func toPaymanStr() -> String{
-        
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "dd"
-        
-        return formatter.stringFromDate(self)
-    }
-    
 }
 
